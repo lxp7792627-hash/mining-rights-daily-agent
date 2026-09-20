@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+reports/
+data/
+!data/.gitkeep
+mcp-config.local.json
+*.log
