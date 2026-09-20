@@ -1,0 +1,16 @@
+services:
+  brief:
+    build: .
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs: [/tmp]
+    volumes:
+      - ./reports:/app/reports
+      - ./data:/app/data:ro
+    environment:
+      NEWS_FEEDS: ${NEWS_FEEDS:-https://www.mining.com/feed/,https://www.miningweekly.com/page/home/feed,https://www.mining-technology.com/feed/}
+      LME_PRICE_FILE: ${LME_PRICE_FILE:-}
+      LME_PRICE_URL: ${LME_PRICE_URL:-}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-}

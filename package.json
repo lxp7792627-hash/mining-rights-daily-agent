@@ -1,0 +1,41 @@
+{
+  "name": "mining-rights-daily-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three MCP servers and an evidence-first mining daily briefing agent",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build",
+    "brief": "node dist/agent/cli.js",
+    "demo": "node dist/agent/cli.js --demo --topic Pilbara --commodity lithium --date 2026-09-20 --out reports/demo.md",
+    "config": "node scripts/config.mjs",
+    "pretest": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "cheerio": "1.2.0",
+    "pdf-parse": "2.4.5",
+    "rss-parser": "3.13.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^24.0.0",
+    "@types/pdfkit": "^0.17.0",
+    "eslint": "^9.39.0",
+    "pdfkit": "^0.17.2",
+    "prettier": "^3.8.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.0",
+    "vitest": "^4.1.11"
+  }
+}

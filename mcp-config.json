@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "mining-news-mcp": {
+      "command": "node",
+      "args": ["dist/servers/main.js", "news"],
+      "env": { "DATA_MODE": "live" }
+    },
+    "mineral-pdf-mcp": {
+      "command": "node",
+      "args": ["dist/servers/main.js", "pdf"],
+      "env": { "DATA_MODE": "live" }
+    },
+    "lme-price-mcp": {
+      "command": "node",
+      "args": ["dist/servers/main.js", "price"],
+      "env": { "DATA_MODE": "live" }
+    }
+  }
+}
